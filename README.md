@@ -6,7 +6,7 @@ A custom implementation of Wavelet based thresholding for removing AWGN (Additiv
 
 $$\sigma_{j} \lambda_{j}$$
 
-Here $$\sigma_{j}  = MAD(w_{jk})$$ for the Wavelet coefficients $$w_{jk}$$ and $$\lambda_{j} = \sqrt{2 \log n}$$
+Here $$\sigma_{j}  = MAD(w_{jk}) / 0.6745$$ for the Wavelet coefficients $$w_{jk}$$ and $$\lambda_{j} = \sqrt{2 \log n}$$
 
 This implementation was also based off details inspired by:
 - [Speech enhancement using an adaptive Wiener Filter](https://dl.acm.org/doi/abs/10.1007/s10772-013-9205-5)
