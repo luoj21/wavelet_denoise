@@ -24,7 +24,7 @@ def plot_spectrogram(audio_signal: np.ndarray, sr: int, title: str, out_path: st
 
     D = librosa.amplitude_to_db(np.abs(librosa.stft(audio_signal)), ref=np.max)
 
-    plt.figure(figsize=(6, 3))
+    plt.figure(figsize=(10, 3))
     librosa.display.specshow(D, x_axis='time', y_axis='log', sr=sr, cmap='inferno')
     plt.title(title)
     plt.colorbar(format='%+2.0f dB')
@@ -37,7 +37,7 @@ def plot_spectrogram(audio_signal: np.ndarray, sr: int, title: str, out_path: st
 
 def plot_original_vs_filtered(x: np.ndarray, x_hat: np.ndarray, start: int, end: int, sr: int):
     """Plots side by side the filtered signal and the original signal"""
-    fig, axs = plt.subplots(1, 2)
+    fig, axs = plt.subplots(1, 2, figsize = (10, 3))
     t = np.arange(len(x)) / sr
 
     axs[0].plot(t[start:end], x[start:end])
