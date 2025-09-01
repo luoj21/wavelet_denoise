@@ -19,4 +19,4 @@ A custom implementation of the Wavelet based thresholding for removing AWGN (Add
 ### Other:
 
 The audio used as data were pulled from the following YouTube links:
-- [Man Born in 1853 Talks About Childhood in the 1860s- Enhanced Video & Audio [60 fps]](https://www.youtube.com/watch?)
+- [Man Born in 1853 Talks About Childhood in the 1860s- Enhanced Video & Audio [60 fps]](https://www.youtube.com/watch?v=_oqbLSisnME&list=LL&index=2)
