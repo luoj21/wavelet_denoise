@@ -2,7 +2,7 @@
 
 ---
 
-A custom implementation of the Wavelet based thresholding for removing AWGN (Additive White Gaussian Noise) and correlated noise. This is based off the [1997 Paper by Johnstone and Silverman](https://academic.oup.com/jrsssb/article-abstract/59/2/319/7083031), in which the algorithm either performs soft or hard thresholding of the Wavelet coefficients of the input signal, where the treshold for each level $$j$$ is
+A custom implementation of Wavelet based thresholding for removing AWGN (Additive White Gaussian Noise) and correlated noise. This is based off the [1997 Paper by Johnstone and Silverman](https://academic.oup.com/jrsssb/article-abstract/59/2/319/7083031), in which the algorithm either performs soft or hard thresholding of the Wavelet coefficients of the input signal, where the treshold for each level $$j$$ is
 
 $$\sigma_{j} \lambda_{j}$$
 
