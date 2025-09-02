@@ -15,15 +15,15 @@ class Wavelet_Filter:
     - https://stackoverflow.com/questions/56789030/why-is-wavelet-denoising-producing-identical-results-regardless-of-threshold-lev"""
     
     
-    def __init__(self, threshold: str, wavelet: str, level: int, mode: str, x: np.ndarray):
+    def __init__(self, threshold_type: str, wavelet: str, level: int, mode: str, x: np.ndarray):
         if wavelet not in set(pywt.wavelist(family=None, kind='all')):
             raise ValueError("Improper Wavelet name")
         
-        if threshold.lower() not in ["hard", "soft"]:
+        if threshold_type.lower() not in ["hard", "soft"]:
             raise ValueError("Improper threshold (must be hard or soft)")
         
 
-        self.threshold = threshold
+        self.threshold_type = threshold_type
         self.wavelet = wavelet
         self.level = level
         self.mode = mode
@@ -60,7 +60,7 @@ class Wavelet_Filter:
             _lambda = np.sqrt(2 * np.log(len(self.x)))
             sigma = mad(coeffs[-self.level]) / 0.6745
             threshold = _lambda * sigma * scaling_factor
-            cDs_new.extend(pywt.threshold(i, value=threshold, mode=self.threshold) for i in cDs)
+            cDs_new.extend(pywt.threshold(i, value=threshold, mode=self.threshold_type) for i in cDs)
 
         else:
             for cD in cDs:
@@ -68,7 +68,7 @@ class Wavelet_Filter:
                 _lambda = np.sqrt(2 * np.log(N))
                 sigma = mad(cD) / 0.6745 
                 threshold = _lambda * sigma * scaling_factor
-                cDs_new.append(pywt.threshold(cD, value=threshold, mode=self.threshold))
+                cDs_new.append(pywt.threshold(cD, value=threshold, mode=self.threshold_type))
         
         assert len(cDs_new) == len(cDs)
         reconstr = pywt.waverec([cA] + cDs_new, wavelet = self.wavelet, mode = self.mode)
