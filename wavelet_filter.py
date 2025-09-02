@@ -16,6 +16,13 @@ class Wavelet_Filter:
     
     
     def __init__(self, threshold: str, wavelet: str, level: int, mode: str, x: np.ndarray):
+        if wavelet not in set(pywt.wavelist(family=None, kind='all')):
+            raise ValueError("Improper Wavelet name")
+        
+        if threshold.lower() not in ["hard", "soft"]:
+            raise ValueError("Improper threshold (must be hard or soft)")
+        
+
         self.threshold = threshold
         self.wavelet = wavelet
         self.level = level

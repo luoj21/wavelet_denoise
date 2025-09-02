@@ -11,7 +11,6 @@ def calc_snr(x: np.ndarray, x_hat: np.ndarray):
     Brighton, UK, 2019, pp. 626-630, doi: 10.1109/ICASSP.2019.8683855. keywords: {speech enhancement;source separation;signal-to-noise-ratio;objective measure},"""
 
     eps = np.finfo(float).eps
-    N = len(x)
     signal_power = (np.linalg.norm(x) ** 2) 
     noise_power = (np.linalg.norm(x - x_hat) ** 2)
 
