@@ -20,7 +20,7 @@ This implementation was also based off details inspired by:
 - Create a virtual environment: ```python3 -m venv .venv```
 - Activate the environment```source .venv/bin/activate```
 - Install packages: ```pip install -r requirements.txt```
-- Run ```results.ipynb```
+- Run the notebooks in ```notebooks```
 
 -----
 
