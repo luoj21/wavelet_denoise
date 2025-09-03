@@ -11,6 +11,7 @@ Here $$\sigma_{j}  = MAD(w_{jk}) / 0.6745$$ for the Wavelet coefficients $$w_{jk
 This implementation was also based off details inspired by:
 - [Speech enhancement using an adaptive Wiener Filter](https://dl.acm.org/doi/abs/10.1007/s10772-013-9205-5)
 - [This Stack Overflow post](https://stackoverflow.com/questions/56789030/why-is-wavelet-denoising-producing-identical-results-regardless-of-threshold-lev)
+- [WDenoise in MATLAB](https://www.mathworks.com/help/wavelet/denoising.html?s_tid=CRUX_topnav)
 
 -----
 
