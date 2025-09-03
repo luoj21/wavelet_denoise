@@ -1,6 +1,8 @@
 import numpy as np
 import pywt
 
+from utils import flatten_signal
+
 class Wavelet_Filter:
     """A wavelet-based denoising algorithm based off of:
 
@@ -27,7 +29,7 @@ class Wavelet_Filter:
         self.wavelet = wavelet
         self.level = level
         self.mode = mode
-        self.x = x
+        self.x = flatten_signal(x)
 
     @staticmethod   
     def median_abs_dev(w: np.ndarray):

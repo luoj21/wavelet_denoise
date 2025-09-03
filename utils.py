@@ -46,3 +46,15 @@ def plot_original_vs_filtered(x: np.ndarray, x_hat: np.ndarray, start: int, end:
     axs[1].set_title('Filtered Signal')
 
     plt.tight_layout()
+
+
+def flatten_signal(x: np.ndarray):
+    """Turns signal of shape (N x 1) -> (N, )"""
+    if x.ndim == 1:
+        return x
+
+    if x.ndim == 2 and x.shape[1] == 1:
+        return x.flatten()
+    else:
+        raise ValueError(f"Expected signal of shape ({x.shape[0]}, 1) but got {x.shape}")
+    
