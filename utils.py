@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import librosa
+import pywt
 
 
 
@@ -67,3 +68,15 @@ def flatten_signal(x: np.ndarray):
     else:
         raise ValueError(f"Expected signal of shape ({x.shape[0]}, 1) but got {x.shape}")
     
+
+def plot_scalogram(x: np.ndarray, scales: np.ndarray, fs: int, title: str, out_path: str):
+    """Plots scalogram of given signal"""
+    coefficients, _ = pywt.cwt(x, scales=scales, wavelet='morl', sampling_period=1/fs)
+    coefficients = np.abs(coefficients)
+    plt.title(title)
+    plt.imshow(coefficients)
+    plt.ylabel('Frequency (Hz)')
+    plt.colorbar(format='%+2.0f dB')
+    plt.tight_layout()
+    plt.savefig(f'{out_path}/{title}.png', dpi = 200)
+    plt.show()
