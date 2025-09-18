@@ -76,7 +76,7 @@ def plot_scalogram(x: np.ndarray, scales: np.ndarray, fs: int, title: str, out_p
     plt.title(title)
     plt.imshow(coefficients)
     plt.ylabel('Frequency (Hz)')
-    plt.colorbar(format='%+2.0f dB')
+    plt.colorbar()
     plt.tight_layout()
     plt.savefig(f'{out_path}/{title}.png', dpi = 200)
     plt.show()
