@@ -48,6 +48,15 @@ def plot_original_vs_filtered(x: np.ndarray, x_hat: np.ndarray, start: int, end:
     plt.tight_layout()
 
 
+def plot_signal(x: np.ndarray, sr: int, start: int, end: int):
+    """Plots signal with designated sample rate"""
+    plt.clf()
+    t = np.arange(len(x)) / sr
+    plt.plot(t[start:end], x[start:end])
+    plt.xlabel("Seconds")
+    plt.tight_layout()
+
+
 def flatten_signal(x: np.ndarray):
     """Turns signal of shape (N x 1) -> (N, )"""
     if x.ndim == 1:
